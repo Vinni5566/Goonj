@@ -1,0 +1,81 @@
+# ─── Dependencies ───────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ─── Build outputs ──────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+.output/
+.nitro/
+.vinxi/
+
+# ─── TanStack / Vite internals ──────────────────────────────────
+.tanstack/
+.vite-temp/
+*.timestamp-*.mjs
+
+# ─── Environment & secrets ──────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.local
+.dev.vars
+
+# ─── Logs ───────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── OS artefacts ───────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Editor directories ─────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swx
+*~
+
+# ─── Wrangler / Cloudflare ──────────────────────────────────────
+.wrangler/
+
+# ─── Testing & coverage ─────────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ─── Misc lock files (keep only one) ────────────────────────────
+# Uncomment whichever you are NOT using:
+# package-lock.json   # (keep if using npm)
+# yarn.lock           # (keep if using yarn)
+# bun.lock            # (keep if using bun)
+
+# ─── Lovable / legacy artefacts (if any remain) ─────────────────
+.lovable/
+AGENTS.md
+bunfig.toml
+
+# ─── TypeScript cache ───────────────────────────────────────────
+*.tsbuildinfo
+
+# ─── Optional: generated route tree (auto-regenerated) ──────────
+# src/routeTree.gen.ts

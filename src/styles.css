@@ -1,0 +1,196 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Goonj brand tokens */
+  --color-plum: var(--plum);
+  --color-violet: var(--violet);
+  --color-parchment: var(--parchment);
+  --color-marigold: var(--marigold);
+  --color-terracotta: var(--terracotta);
+  --color-ivory: var(--ivory);
+  --color-linen: var(--linen);
+  --color-espresso: var(--espresso);
+  --color-warmgray: var(--warmgray);
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-warm: 0 10px 30px -10px rgba(45, 27, 78, 0.18), 0 2px 6px rgba(45, 27, 78, 0.06);
+  --shadow-warm-sm: 0 4px 14px rgba(45, 27, 78, 0.08);
+  --shadow-warm-lg: 0 24px 60px -20px rgba(45, 27, 78, 0.25);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand */
+  --plum: #2D1B4E;
+  --violet: #6B3FA0;
+  --parchment: #F5E6C8;
+  --marigold: #E8A84C;
+  --terracotta: #C4604A;
+  --ivory: #FDFAF5;
+  --linen: #F0EBE0;
+  --espresso: #2C2420;
+  --warmgray: #7A6A5A;
+
+  /* shadcn semantic mapped to brand */
+  --background: var(--ivory);
+  --foreground: var(--espresso);
+  --card: #ffffff;
+  --card-foreground: var(--espresso);
+  --popover: #ffffff;
+  --popover-foreground: var(--espresso);
+  --primary: var(--plum);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--linen);
+  --secondary-foreground: var(--plum);
+  --muted: var(--linen);
+  --muted-foreground: var(--warmgray);
+  --accent: var(--marigold);
+  --accent-foreground: var(--espresso);
+  --destructive: var(--terracotta);
+  --destructive-foreground: var(--ivory);
+  --border: rgba(45, 27, 78, 0.10);
+  --input: rgba(45, 27, 78, 0.12);
+  --ring: var(--violet);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  ::selection { background: var(--marigold); color: var(--espresso); }
+}
+
+@utility container-x {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (min-width: 768px) { padding-inline: 2.5rem; }
+}
+
+@utility label-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+@utility btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.875rem 1.75rem;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+@utility btn-plum {
+  background: var(--plum);
+  color: var(--ivory);
+  box-shadow: 0 6px 20px -6px rgba(45, 27, 78, 0.45);
+  &:hover {
+    background: var(--violet);
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 10px 30px -8px rgba(107, 63, 160, 0.5);
+  }
+}
+
+@utility btn-ghost-plum {
+  background: transparent;
+  color: var(--plum);
+  border: 1.5px solid var(--plum);
+  &:hover { background: var(--plum); color: var(--ivory); }
+}
+
+@utility btn-marigold {
+  background: var(--marigold);
+  color: var(--espresso);
+  box-shadow: 0 6px 20px -6px rgba(232, 168, 76, 0.55);
+  &:hover { background: #f0b85c; transform: translateY(-1px) scale(1.02); }
+}
+
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--linen);
+  color: var(--espresso);
+  border-radius: 9999px;
+  padding: 0.4rem 0.85rem;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+@utility card-warm {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: var(--shadow-warm-sm);
+  border: 1px solid rgba(45, 27, 78, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@utility section-y {
+  padding-block: 80px;
+  @media (min-width: 768px) { padding-block: 110px; }
+}
+
+@keyframes flutter {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50% { transform: translateY(-8px) rotate(4deg); }
+}
+@utility animate-flutter { animation: flutter 2.4s ease-in-out infinite; }
+
+@keyframes wave-rise {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

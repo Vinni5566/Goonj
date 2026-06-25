@@ -91,7 +91,7 @@ Goonj's intelligence runs silently in the background, doing heavy lifting your f
 │      stories, health patterns, festivals,           │
 │      prayers, and everyday moments.                 │
 ├─────────────────────────────────────────────────────┤
-│  04  SURFACING LAYER                               │
+│  04  SURFACING LAYER                                │
 │      Contextual playback. Birthdays, anniversaries, │
 │      the right moment. Automatically.               │
 └─────────────────────────────────────────────────────┘
